@@ -1,3 +1,14 @@
-button#hold {
+button#restart {
   display: none;
+}
+#playerTurn {
+  font-size: 2em;
+}
+
+#winner {
+  display: none;
+  background-image: url("http://bestanimations.com/Holidays/Fireworks/fireworks/ba-colorful-fireworks-animated-gif-pic.gif");
+  min-height: 265px;
+  margin-right: 25%;
+  margin-left: 25%;
 }

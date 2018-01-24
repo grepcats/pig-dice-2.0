@@ -6,6 +6,7 @@
     <script type="text/javascript" src="js/jquery-3.3.1.js"></script>
     <script type="text/javascript" src="js/scripts.js"></script>
     <meta charset="utf-8">
+    <title>Pig Dice Game</title>
   </head>
   <body>
     <div class="container">
@@ -29,14 +30,18 @@
         </ul>
       </div>
       <br>
-      <div class="well">
+      <div class="well text-center" id="playerTurn">
         <!-- player turn  -->
+      </div>
+      <div class ="well text-center" id="winner">
+        <img src="https://vignette.wikia.nocookie.net/camphalfbloodroleplay/images/3/3f/Tumblr_mg3h0yvGFD1rgpyeqo1_500.gif/revision/latest?cb=20140110232435" alt="">
       </div>
       <div class="well text-center">
         <!-- dice roll button, hold button, role value displayed  -->
         <h2 id="rollValue"></h2>
         <button type="button" class="btn btn-warning" id="roll">ROLL</button>
         <button type="button" class="btn btn-success" id="hold">HOLD</button>
+        <button type="button" class="btn btn-primary" id="restart">RESTART GAME</button>
       </div>
       <div class="row text-center">
         <div class="col-md-6">
