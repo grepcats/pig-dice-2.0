@@ -1,3 +1,23 @@
+function computer() {
+  this.bank = 0;
+  this.score = 0;
+}
+
+function computerRoll() {
+  var counter = 0;
+  for (var i = 0; i <= 1 ; i++) {
+    var roll = diceRoller();
+    if (roll !== 1) {
+      counter += roll;
+      if (i === 1) {
+        return counter;
+      }
+    } else {
+      return 1;
+    }
+  }
+};
+
 function diceRoller() {
 // math floor rounds down to whole number, math random generates random decimal between 0 and 1, e.g. 0.798987
 var rollValue = Math.floor(Math.random()*6)+1;
@@ -24,12 +44,6 @@ function rollAction(counter, roll) {
 }
 
 $(document).ready(function() {
-  $("#human").click(function(){
-    $(".human").show();
-    $("#human").hide();
-    $("#computer").hide();
-
-  });
   var player = 1;
   var roll = 0;
   var counter = 0;
@@ -39,9 +53,9 @@ $(document).ready(function() {
   var score2 = 0;
 
   $("#bankTotal1").text(bank1);
-  $("#bankTotal2").text(bank2);
+  $("#halBank").text(bank2);
   $("#scoreTotal1").text(score1);
-  $("#scoreTotal2").text(score2);
+  $("#halScore").text(score2);
   $("#playerTurn").text("Player " + player + " turn");
 
   // ROLL UI
@@ -53,16 +67,29 @@ $(document).ready(function() {
     if (player === 1) {
       bank1 = counter;
       $("#bankTotal1").text(bank1);
-    } else {
-      bank2 = counter;
-      $("#bankTotal2").text(bank2);
     }
 
     if (roll === 1) {
       player = playerTurn(player);
-      alert("HALT! Player turn change! It is now Player " + player + "'s turn!");
+      alert("You rolled a 1. It's Hal's turn.");
       bank1 = 0;
-      bank2 = 0;
+      var compTurn = computerRoll();
+      if (compTurn === 1) {
+        player = playerTurn(player);
+        alert("Hal was unlucky. Your turn.")
+      } else if (compTurn !== 1) {
+        score2 = score2 + compTurn;
+        $("#halScore").text(score2);
+        alert("Hal scored " + compTurn + ". Your turn.")
+        player = playerTurn(player);
+        if (score2 >= 100) {
+          $("#playerTurn").text("Hal WINS!");
+          $("#winner").show();
+          $("#restart").show();
+          $("#hold").hide();
+          $("#roll").hide();
+        }
+      }
     }
     $("#playerTurn").text("Player " + player + " turn");
   });
@@ -73,15 +100,27 @@ $(document).ready(function() {
       score1 = score1 + counter;
       $("#scoreTotal1").text(score1);
       counter = 0;
-    } else {
-      score2 = score2 + counter;
-      $("#scoreTotal2").text(score2);
-      counter = 0;
     }
     bank1 = 0;
-    bank2 = 0;
     $("#bankTotal1").text(bank1);
-    $("#bankTotal2").text(bank2);
+
+    compTurn = computerRoll();
+    if (compTurn === 1) {
+      player = playerTurn(player);
+      alert("Hal was unlucky. Your turn.");
+    } else if (compTurn !== 1) {
+      score2 = score2 + compTurn;
+      $("#halScore").text(score2);
+      if (score2 >= 100) {
+        $("#playerTurn").text("Hal WINS!");
+        $("#winner").show();
+        $("#restart").show();
+        $("#hold").hide();
+        $("#roll").hide();
+      }
+      player = playerTurn(player);
+      alert("Hal rolled, it's your turn.");
+    }
 
     if (score1 >= 100) {
       $("#playerTurn").text("Player 1 WINS!");

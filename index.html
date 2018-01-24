@@ -28,43 +28,48 @@
           </ul>
           <li>The game is won when a player has a score of 100</li>
         </ul>
+        <div class="text-center">
+          <h4>CHOOSE OPPONENT</h4>
+          <a href="computer.html"><img src="img/comp.png" id="computer"></a>
+          <img src="img/human.png" id="human">
+        </div>
       </div>
       <br>
-      <div class="well text-center" id="playerTurn">
-        <!-- player turn  -->
-      </div>
-      <div class ="well text-center" id="winner">
-        <img src="https://vignette.wikia.nocookie.net/camphalfbloodroleplay/images/3/3f/Tumblr_mg3h0yvGFD1rgpyeqo1_500.gif/revision/latest?cb=20140110232435" alt="">
-      </div>
-      <div class="well text-center">
-        <!-- dice roll button, hold button, role value displayed  -->
-        <h2 id="rollValue"></h2>
-        <button type="button" class="btn btn-warning" id="roll">ROLL</button>
-        <button type="button" class="btn btn-success" id="hold">HOLD</button>
-        <button type="button" class="btn btn-primary" id="restart">RESTART GAME</button>
-      </div>
-      <div class="row text-center">
-        <div class="col-md-6">
-          <!-- player1 stats -->
-          <h4>PLAYER ONE</h4>
-          <p>BANK</p>
-          <p id="bankTotal1"></p>
-          <br>
-          <p>SCORE</p>
-          <p id="scoreTotal1"></p>
+      <div class="human">
+        <div class="well text-center" id="playerTurn">
+          <!-- player turn  -->
         </div>
-        <div class="col-md-6">
-          <!-- player2 stats  -->
-          <h4>PLAYER TWO</h4>
-          <p>BANK</p>
-          <p id="bankTotal2"></p>
-          <br>
-          <p>SCORE</p>
-          <p id="scoreTotal2"></p>
+        <div class ="well text-center" id="winner">
+          <img src="https://vignette.wikia.nocookie.net/camphalfbloodroleplay/images/3/3f/Tumblr_mg3h0yvGFD1rgpyeqo1_500.gif/revision/latest?cb=20140110232435" alt="">
         </div>
-      </div>
-
-
-    </div>
+        <div class="well text-center">
+          <!-- dice roll button, hold button, role value displayed  -->
+          <h2 id="rollValue"></h2>
+          <button type="button" class="btn btn-warning" id="roll">ROLL</button>
+          <button type="button" class="btn btn-success" id="hold">HOLD</button>
+          <button type="button" class="btn btn-primary" id="restart">RESTART GAME</button>
+        </div>
+        <div class="row text-center">
+          <div class="col-md-6">
+            <!-- player1 stats -->
+            <h4>PLAYER ONE</h4>
+            <p>BANK</p>
+            <p id="bankTotal1"></p>
+            <br>
+            <p>SCORE</p>
+            <p id="scoreTotal1"></p>
+          </div>
+          <div class="col-md-6">
+            <!-- player2 stats  -->
+            <h4>PLAYER TWO</h4>
+            <p>BANK</p>
+            <p id="bankTotal2"></p>
+            <br>
+            <p>SCORE</p>
+            <p id="scoreTotal2"></p>
+          </div>
+        </div>
+      </div> <!-- human -->
+    </div> <!-- container -->
   </body>
 </html>
