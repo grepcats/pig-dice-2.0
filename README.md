@@ -1,71 +1,50 @@
 # Template
 
-#### January 11th, 2018 
+#### January 11th, 2018
 
-<!--
-## Getting Started
 
-These instructions will get you a copy of the project up and running on your local machine for development and testing purposes. See deployment for notes on how to deploy the project on a live system.
-
-### Prerequisites
-
-What things you need to install the software and how to install them
-
-```
-Give examples
-```
-
-### Installing
-
-A step by step series of examples that tell you have to get a development env running
-
-Say what the step will be
-
-```
-Give the example
-```
-
-And repeat
-
-```
-until finished
-```
-
-End with an example of getting some data out of the system or using it for a little demo
-
-## Running the tests
-
-Explain how to run the automated tests for this system
-
-### Break down into end to end tests
-
-Explain what these tests test and why
-
-```
-Give an example
-```
-
-### And coding style tests
-
-Explain what these tests test and why
-
-```
-Give an example
-```
-
-## Deployment
-
-Add additional notes about how to deploy this on a live system
--->
-
-## Description 
+## Description
 
 This is a skeletal file and code template for building webpages with html, css, bootstrap, javascript, and jQuery. The files include index.html, script.js, styles.css.
+
+## _Specifications_
+
+1. User will click a button that rolls a 6 sided dice and provides a random generated number.
+* Example input: user clicks roll button
+* Example output: 5
+
+2. Display their dice roll
+* Example input: rolled a 5
+* Example output: Display the 5 above the roll button
+
+3. Determine if turn ends
+* Example input: rolled a 1
+* Example output: turn switches to next player
+
+4. If roll does not equal 1, store user roll value in their bank.
+* Example input: rolled a 4
+* Example output: bank = 4
+
+5. A. Give player option to roll again, or push bank value to score value.
+* Example input: Player chooses to push bank value to score value.
+* Example output: (Bank = 5) => (Score = 5 && Bank = 0 && becomes next players turn)
+
+5. B. Give player option to roll again, or push bank value to score value.
+* Example input: Player chooses to roll again
+* Example output: repeat of steps 1 - 4
+
+6. It is the next player's turn. They get to roll.
+* Example input: press button for dice roll
+* Example output: repeat of steps 1 - 5
+
+7. Game ends when a player's score equals 100.
+* Example input: Player 2 score = 100
+* Example output: Game End. Player 2 Wins.
 
 ## Built With
 
 * HTML
-* CSS 
+* CSS
 * Bootstrap
 *Javascript
 *jQuery
@@ -87,7 +66,7 @@ Version 1.0
 
 ## Authors
 
-**John Rykken** 
+**John Rykken**
 
 ## License
 
