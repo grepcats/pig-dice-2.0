@@ -33,7 +33,7 @@ describe('Player', function() {
 
   it('sets players bank value equal to roll value, unless roll eq 1', function() {
     var roll = diceRoller();
-    var newBank = roll + reusablePlayer.bank; 
+    var newBank = roll + reusablePlayer.bank;
     reusablePlayer.updateBank(roll);
     if (roll === 1)
     {

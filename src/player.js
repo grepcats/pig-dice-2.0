@@ -23,7 +23,7 @@ Player.prototype.updateTotal = function() {
 
 Player.prototype.updateBank = function(rollValue) {
   if (rollValue === 1) {
-    this.bank === 0;
+    this.bank = 0;
   } else {
     this.bank = this.bank + rollValue;
   }
