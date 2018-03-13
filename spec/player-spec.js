@@ -1,4 +1,5 @@
 import { Player } from '../src/player.js';
+import { diceRoller } from '../src/pig-dice.js';
 
 describe('Player', function() {
 
@@ -22,5 +23,11 @@ describe('Player', function() {
     var currentPlayer = reusablePlayer.changePlayer();
     expect(currentPlayer).toEqual(2);
     expect(currentPlayer).not.toEqual(1);
+  });
+
+  it('should update a players total', function() {
+    var highroller = new Player(1, 20, 50)
+    highroller.updateTotal();
+    expect(highroller.total).toEqual(70);
   });
 });

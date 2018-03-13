@@ -14,3 +14,7 @@ Player.prototype.changePlayer = function() {
   }
   return currentPlayer;
 };
+
+Player.prototype.updateTotal = function() {
+  this.total = this.total + this.bank;
+}
