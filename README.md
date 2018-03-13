@@ -1,11 +1,11 @@
 # Template
 
-#### January 11th, 2018
+#### March 13, 2018
 
 
 ## Description
 
-This is a skeletal file and code template for building webpages with html, css, bootstrap, javascript, and jQuery. The files include index.html, script.js, styles.css.
+
 
 ## _Specifications_
 
