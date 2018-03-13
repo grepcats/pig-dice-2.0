@@ -30,4 +30,19 @@ describe('Player', function() {
     highroller.updateTotal();
     expect(highroller.total).toEqual(70);
   });
+
+  it('sets players bank value equal to roll value, unless roll eq 1', function() {
+    var roll = diceRoller();
+    var newBank = roll + reusablePlayer.bank; 
+    reusablePlayer.updateBank(roll);
+    if (roll === 1)
+    {
+      expect(reusablePlayer.bank).toEqual(0);
+    }
+    else {
+      expect(reusablePlayer.bank).toEqual(newBank);
+      expect(reusablePlayer.bank).toMatch(/[1][9]|[2][0-3]/);
+    }
+
+  });
 });

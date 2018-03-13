@@ -1,3 +1,5 @@
+import { diceRoller } from './pig-dice.js';
+
 export function Player(playerNum, bank, total) {
   this.playerNum = playerNum;
   this.bank = bank;
@@ -17,4 +19,12 @@ Player.prototype.changePlayer = function() {
 
 Player.prototype.updateTotal = function() {
   this.total = this.total + this.bank;
-}
+};
+
+Player.prototype.updateBank = function(rollValue) {
+  if (rollValue === 1) {
+    this.bank === 0;
+  } else {
+    this.bank = this.bank + rollValue;
+  }
+};
