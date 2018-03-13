@@ -4,4 +4,13 @@ export function Player(playerNum, bank, total) {
   this.total = total;
 }
 
-//playerturn prototype?
+Player.prototype.changePlayer = function() {
+  var currentPlayer;
+  if (this.playerNum === 1)
+  {
+    currentPlayer = 2;
+  } else {
+    currentPlayer = 1;
+  }
+  return currentPlayer;
+};
